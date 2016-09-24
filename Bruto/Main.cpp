@@ -9,6 +9,9 @@
 //-----------headers------------------
 
 #include "player.h"
+#include "Item.h"
+
+typedef unsigned short uShort;
 
 enum main_states
 {
@@ -22,6 +25,24 @@ enum main_states
 int main() {
 
 	main_states state = MAIN_START;
+
+
+	char* name=new char[20];
+	char* clan = new char[20];
+	
+	char WeaponName[10];
+	char AnimalName[10];
+
+	uShort NumDisciplines = 0;
+	uShort NumWeapons = 0;
+	uShort NumAnimals = 0;
+
+	uShort Level = 0;
+	uShort Life = 0;
+	uShort Strenght = 0;
+	uShort Agility = 0;
+	uShort speed = 0;
+
 
 	while (state != MAIN_EXIT)
 	{
