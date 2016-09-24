@@ -20,6 +20,19 @@ enum main_states
 	MAIN_FINISH,
 	MAIN_EXIT
 };
+
+//------------------------------------
+
+struct capability {
+
+	uShort Level = 0;
+	uShort Life = 0;
+	uShort Strenght = 0;
+	uShort Agility = 0;
+	uShort speed = 0;
+
+};
+
 //------------------------------------
 
 int main() {
@@ -33,17 +46,12 @@ int main() {
 	char WeaponName[10];
 	char AnimalName[10];
 
+
 	uShort NumDisciplines = 0;
 	uShort NumWeapons = 0;
 	uShort NumAnimals = 0;
 
-	uShort Level = 0;
-	uShort Life = 0;
-	uShort Strenght = 0;
-	uShort Agility = 0;
-	uShort speed = 0;
-
-
+	
 	while (state != MAIN_EXIT)
 	{
 		switch (state) {
@@ -59,11 +67,11 @@ int main() {
 
 
 		case MAIN_UPDATE: //...........................
-		{
+		
 
 
 			state = MAIN_FINISH;
-		}
+		
 		break;
 
 		case MAIN_FINISH: //...........................

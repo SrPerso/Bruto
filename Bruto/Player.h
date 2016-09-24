@@ -1,10 +1,10 @@
 #ifndef _PLAYER_
 #define _PLAYER_
 
-
+typedef unsigned short uShort;
 //name
 
-void setName(char*);
+void setName(char&);
 
 char* getName(char*);
 

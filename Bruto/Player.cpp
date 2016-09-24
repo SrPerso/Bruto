@@ -9,7 +9,7 @@ using namespace std;
 //------------------------------------
 
 //name
-void setName(char* name)
+void setName(char& name)
 {
 	cin >> name;
 }
