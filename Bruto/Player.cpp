@@ -29,7 +29,7 @@ void setDisciples(uShort *Disciples) {
 
 	uShort NumDisciples=0;
 	cin >> NumDisciples;
-	Disciples = NumDisciples;
+	*Disciples = NumDisciples;
 
 }
 
@@ -52,7 +52,7 @@ char* getClanName(char*Clan) {
 	return Clan;
 }
 
-void printClanName(const char&Clan) {
+void printClanName(char*Clan) {
 	cout<<Clan;
 }
 

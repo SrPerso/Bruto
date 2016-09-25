@@ -1,4 +1,3 @@
-
 #ifndef _GLOBAL_
 #define _GLOBAL_
 
@@ -20,8 +19,8 @@ enum Update_status
 
 typedef unsigned short uShort;
 using namespace std;
-
 Update_status OnGame();
+
 
 //void Intro();
 //void Outro();

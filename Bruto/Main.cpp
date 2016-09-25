@@ -1,13 +1,11 @@
 //- -------- system -----------------
 #include "Global.h"
 //------------------------------------
-
+#include <iostream>
 
 int main() {
 
 	main_states state = MAIN_START;
-
-
 
 	while (state != MAIN_EXIT)
 	{
@@ -28,7 +26,7 @@ int main() {
 			if(OnGame()== UPDATE_STOP)
 				state = MAIN_FINISH;
 			if (OnGame() == UPDATE_ERROR)
-				cout << "\n\n THERE WAS AN ERROR IN THE UPDATE \n\n";
+				cout<<"\n\n THERE WAS AN ERROR IN THE UPDATE \n\n";
 		
 		break;
 

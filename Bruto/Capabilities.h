@@ -1,6 +1,7 @@
 #ifndef _CAPABILITIES_
 #define _CAPABILITIES_
 
+#include "global.h"
 
 struct capability {
 

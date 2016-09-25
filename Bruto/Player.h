@@ -24,7 +24,7 @@ void setClanName(char*);
 
 char* getClanName(char*);
 
-void printClanName(const char&);
+void printClanName(char*);
 
 
 //tournament

@@ -7,14 +7,13 @@
 #include "global.h"
 
 
-
 //------------------------------------
 
 
 //level...............................................
 void WhatLevel(const capability& Capabilities)//what
 {
-
+	
 	cout << "- Level :" << Capabilities.Level << " -";
 
 }
