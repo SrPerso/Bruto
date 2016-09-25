@@ -1,10 +1,10 @@
 #ifndef _PLAYER_
 #define _PLAYER_
 
-typedef unsigned short uShort;
+#include "global.h"
 //name
 
-void setName(char&);
+void setName(char*);
 
 char* getName(char*);
 
@@ -12,7 +12,7 @@ void printName(const char*);
 
 //disciples
 
-void setDisciples(uShort&);
+void setDisciples(uShort*);
 
 uShort getDisciples(const uShort );
 
@@ -20,7 +20,7 @@ const void printDisciples(const uShort);
 
 
 //clan name
-void setClanName(char&);
+void setClanName(char*);
 
 char* getClanName(char*);
 

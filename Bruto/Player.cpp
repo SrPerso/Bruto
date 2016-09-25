@@ -9,7 +9,7 @@ using namespace std;
 //------------------------------------
 
 //name
-void setName(char& name)
+void setName(char* name)
 {
 	cin >> name;
 }
@@ -25,7 +25,7 @@ void printName(const char* name)
 
 //disciples
 
-void setDisciples(uShort &Disciples) {
+void setDisciples(uShort *Disciples) {
 
 	uShort NumDisciples=0;
 	cin >> NumDisciples;
@@ -44,7 +44,7 @@ const void printDisciples(const uShort Disciples ){
 
 //clan name
 
-void setClanName(char& Clan) {
+void setClanName(char*Clan) {
 	cin >> Clan;
 }
 

@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Capabilities.h"
-typedef unsigned short uShort;
-using namespace std;
+#include "global.h"
+
+
 
 //------------------------------------
 

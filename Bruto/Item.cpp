@@ -3,10 +3,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "global.h"
 
-typedef unsigned short uShort;
 
-using namespace std;
+
 
 
 uShort getNumWeapons(uShort Weapon) {
