@@ -10,8 +10,11 @@
 
 #include "player.h"
 #include "Item.h"
+#include "Capabilities.h"
 
 typedef unsigned short uShort;
+
+//---------enum s----------------
 
 enum main_states
 {
@@ -22,16 +25,6 @@ enum main_states
 };
 
 //------------------------------------
-
-struct capability {
-
-	uShort Level = 0;
-	uShort Life = 0;
-	uShort Strenght = 0;
-	uShort Agility = 0;
-	uShort speed = 0;
-
-};
 
 //------------------------------------
 
@@ -51,6 +44,9 @@ int main() {
 	uShort NumWeapons = 0;
 	uShort NumAnimals = 0;
 
+	capability capabilites;
+	capability* Capabilities;
+	Capabilities = &capabilites;
 	
 	while (state != MAIN_EXIT)
 	{
