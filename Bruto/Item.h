@@ -15,12 +15,12 @@ void printAvailableWeapons(uShort&);
 
 //animals
 
-//unsigned short getnumanimals(ushort);
-//
-//void setanimal(char*, ushort*);
-//
-//const void hasanimal(char*,const ushort&);
-//
-//void printavailableanimals(ushort);
+unsigned short GetNumAnimals(uShort);
+
+void setAnimal(char*, uShort&);
+
+const void hasAnimal(char*,const uShort&);
+
+void printAvailableAnimals(uShort);
 
 #endif

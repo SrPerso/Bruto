@@ -461,12 +461,128 @@ void printAvailableWeapons(uShort& Weapon) {
 
 }
 
-//animals
+//animals -------------------------------------------------------------------------------------
 
-//unsigned short getNumAnimals(uShort);
-//
-//void setAnimal(char*, uShort*);
-//
-//void hasAnimal(char*, uShort);
-//
-//void printAvailableAnimals(uShort);
+unsigned short getNumAnimals(uShort Animal) {
+
+	uShort co = 0;
+
+	for (uShort i = 0; i < 16; i++) {
+
+		if ((Animal >> i) & 0x0001)
+			co++;
+
+	}
+
+	return co;
+
+}
+
+void setAnimal(char* NameAnimal, uShort & Animal) {
+
+
+	if (strcmp(NameAnimal, "Dog") == 0)//Dog  -------------------------
+	{
+
+		if ((Animal & 0x0001) >> 8)
+			cout << "You have " << NameAnimal << " already.\n";
+
+		else
+			Animal = Animal | 0x0001;
+
+	}//if
+
+	if (strcmp(NameAnimal, "Wolf") == 0)//Wolf  -------------------------
+	{
+
+		if ((Animal & 0x0002) >> 8)
+			cout << "You have " << NameAnimal << " already.\n";
+
+		else
+			Animal = Animal | 0x0002;
+
+	}//if
+
+	if (strcmp(NameAnimal, "Bear") == 0)//Bear  -------------------------
+	{
+
+		if ((Animal & 0x0004) >> 8)
+			cout << "You have " << NameAnimal << " already.\n";
+
+		else
+			Animal = Animal | 0x0004;
+
+	}//if
+
+
+	else//error  --------------------------------------------------
+		cout << "There is a error, this Animal doesn't exists\n";
+
+
+}
+
+void hasAnimal(char*NameAnimal,const uShort & Animal) {
+
+	if (strcmp(NameAnimal, "Dog") == 0)//Dog  -------------------------
+	{
+
+		if ((Animal & 0x0001) >> 8)
+			cout << "You have " << NameAnimal;
+
+		else
+			cout << "You haven't the " << NameAnimal;
+
+	}//if
+
+	if (strcmp(NameAnimal, "Wolf") == 0)//Wolf  -------------------------
+	{
+
+		if ((Animal & 0x0002) >> 8)
+			cout << "You have " << NameAnimal;
+
+		else
+			cout << "You haven't the " << NameAnimal;
+
+	}//if
+
+	if (strcmp(NameAnimal, "Bear") == 0)//Bear  -------------------------
+	{
+
+		if ((Animal & 0x0004) >> 8)
+			cout << "You have " << NameAnimal;
+
+		else
+			cout << "You haven't the " << NameAnimal;
+
+	}//if
+}
+
+void printAvailableAnimals(uShort Animal) {
+
+
+	if (getNumWeapons != 0)
+	{
+		cout << "Your Animals:\n";
+		for (int i = 0; i < 3; i++)
+		{
+
+			if (Animal & 0x0001)
+			{
+				if (i == 0)
+					cout << "- Dog.\n";
+
+				if (i == 1)
+					cout << "- Wolf.\n";
+
+				if (i == 2)
+					cout << "- Bear.\n";
+
+			}//if
+			Animal = Animal >> 1;
+		}//for
+	}
+
+	else
+		cout << "You have no Animal.\n";
+		
+}
