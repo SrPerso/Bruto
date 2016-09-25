@@ -5,46 +5,346 @@
 #include <stdlib.h>
 
 typedef unsigned short uShort;
+
 using namespace std;
 
 
-uShort getNumWeapons(uShort NumWeapons) {
+uShort getNumWeapons(uShort Weapon) {
 
-	return NumWeapons;
+	uShort co = 0;
+	
+		for (uShort i = 0; i < 16; i++){
+
+		if ((Weapon >> i) & 0x0001)		
+			co++;		
+
+		}
+
+	return co;
 }
 
-void setWeapon(char* NameWeapon, uShort& NumWeapons) {
-	
-	if (strcmp(NameWeapon, "Sword") == 0)//sword
+void setWeapon(char* NameWeapon, uShort& Weapon) {
+
+	if (strcmp(NameWeapon, "StoneHammer") == 0)//StoneHammer  -------------------------
 	{
 
-		if ((NumWeapons & 0x1000) >> 8)
+		if ((Weapon & 0x0001) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0001;
+
+	}//if
+
+
+	if (strcmp(NameWeapon, "Baton") == 0)//Baton  -------------------------
+	{
+
+		if ((Weapon & 0x0002) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0002;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Broadsword") == 0)//Broadsword  -------------------------
+	{
+
+		if ((Weapon & 0x0004) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0004;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Bumps") == 0)//Bumps  -------------------------
+	{
+
+		if ((Weapon & 0x0008) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0008;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Keyboard") == 0)//Keyboard  -------------------------
+	{
+
+		if ((Weapon & 0x0010) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0010;
+
+	}//if
+	
+	else if (strcmp(NameWeapon, "Knife") == 0)//knife -----------------------
+	{
+
+		if ((Weapon & 0x0020) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0020;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "MorningStar") == 0)//MorningStar -----------------------
+	{
+
+		if ((Weapon & 0x0040) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0040;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "Lance") == 0)//Lance -----------------------
+	{
+
+		if ((Weapon & 0x0080) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0080;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "MammothBone") == 0)//MammothBone -----------------------
+	{
+
+		if ((Weapon & 0x0100) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0100;
+
+	}//if
+	
+	else if (strcmp(NameWeapon, "Shuriken") == 0)//Shuriken -----------------------
+	{
+
+		if ((Weapon & 0x0200) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0200;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "NoodleBowl") == 0)//NoodleBowl -----------------------
+	{
+
+		if ((Weapon & 0x0400) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0400;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "PiouPiouz") == 0)//PiouPiouz -----------------------
+	{
+
+		if ((Weapon & 0x0800) >> 5)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x0800;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Sword") == 0)//sword  -------------------------
+	{
+
+		if ((Weapon & 0x1000) >> 8)
 			cout << "You have " << NameWeapon << " already.\n";
 		
 		else		
-			NumWeapons = NumWeapons | 0x1000;
+			Weapon = Weapon | 0x1000;
 		
 	}
 
-	else if (strcmp(NameWeapon, "Knife") == 0)//knife
+	if (strcmp(NameWeapon, "TennisRacket") == 0)//TennisRacket  -------------------------
 	{
 
-		if ((NumWeapons & 0x0020) >> 5)
+		if ((Weapon & 0x2000) >> 8)
 			cout << "You have " << NameWeapon << " already.\n";
-		
+
 		else
-			NumWeapons = NumWeapons | 0x0020;
-		
+			Weapon = Weapon | 0x2000;
+
 	}
 
-	else//error
+	if (strcmp(NameWeapon, "Trident") == 0)//Trident  -------------------------
+	{
+
+		if ((Weapon & 0x4000) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x4000;
+
+	}
+
+	if (strcmp(NameWeapon, "Trombone") == 0)//Trombone  -------------------------
+	{
+
+		if ((Weapon & 0x8000) >> 8)
+			cout << "You have " << NameWeapon << " already.\n";
+
+		else
+			Weapon = Weapon | 0x8000;
+
+	}
+
+	else//error  --------------------------------------------------
 		cout << "There is a error, this weapon doesn't exists\n";
 
 }
 
 const void hasWeapon(char*NameWeapon,const uShort & NumWeapons) {
 
-	if (strcmp(NameWeapon, "Sword") == 0)//sword
+
+
+	if (strcmp(NameWeapon, "StoneHammer") == 0)//StoneHammer  -------------------------
+	{
+
+		if ((NumWeapons & 0x0001) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+
+	if (strcmp(NameWeapon, "Baton") == 0)//Baton  -------------------------
+	{
+
+		if ((NumWeapons & 0x0002) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Broadsword") == 0)//Broadsword  -------------------------
+	{
+
+		if ((NumWeapons & 0x0004) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Bumps") == 0)//Bumps  -------------------------
+	{
+
+		if ((NumWeapons & 0x0008) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Keyboard") == 0)//Keyboard  -------------------------
+	{
+
+		if ((NumWeapons & 0x0010) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "Knife") == 0)//knife -----------------------
+	{
+
+		if ((NumWeapons & 0x0020) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "MorningStar") == 0)//MorningStar -----------------------
+	{
+
+		if ((NumWeapons & 0x0040) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "Lance") == 0)//Lance -----------------------
+	{
+
+		if ((NumWeapons & 0x0080) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "MammothBone") == 0)//MammothBone -----------------------
+	{
+
+		if ((NumWeapons & 0x0100) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "Shuriken") == 0)//Shuriken -----------------------
+	{
+
+		if ((NumWeapons & 0x0200) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "NoodleBowl") == 0)//NoodleBowl -----------------------
+	{
+
+		if ((NumWeapons & 0x0400) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	else if (strcmp(NameWeapon, "PiouPiouz") == 0)//PiouPiouz -----------------------
+	{
+
+		if ((NumWeapons & 0x0800) >> 5)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}//if
+
+	if (strcmp(NameWeapon, "Sword") == 0)//sword  -------------------------
 	{
 
 		if ((NumWeapons & 0x1000) >> 8)
@@ -55,10 +355,32 @@ const void hasWeapon(char*NameWeapon,const uShort & NumWeapons) {
 
 	}
 
-	else if (strcmp(NameWeapon, "Knife") == 0)//knife
+	if (strcmp(NameWeapon, "TennisRacket") == 0)//TennisRacket  -------------------------
 	{
 
-		if ((NumWeapons & 0x0020) >> 5)
+		if ((NumWeapons & 0x2000) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}
+
+	if (strcmp(NameWeapon, "Trident") == 0)//Trident  -------------------------
+	{
+
+		if ((NumWeapons & 0x4000) >> 8)
+			cout << "You have " << NameWeapon;
+
+		else
+			cout << "You haven't the " << NameWeapon;
+
+	}
+
+	if (strcmp(NameWeapon, "Trombone") == 0)//Trombone  -------------------------
+	{
+
+		if ((NumWeapons & 0x8000) >> 8)
 			cout << "You have " << NameWeapon;
 
 		else
@@ -72,6 +394,7 @@ const void hasWeapon(char*NameWeapon,const uShort & NumWeapons) {
 }
 
 void printAvailableWeapons(uShort& Weapon) {
+	
 	if (getNumWeapons != 0)
 	{
 		cout << "Your weapons:\n";
@@ -133,18 +456,17 @@ void printAvailableWeapons(uShort& Weapon) {
 		}
 	}
 	else
-	{
 		cout << "You have no weapons.\n";
-	}
+	
 
 }
 
 //animals
 
-unsigned short getNumAnimals(uShort);
-
-void setAnimal(char*, uShort*);
-
-void hasAnimal(char*, uShort);
-
-void printAvailableAnimals(uShort);
+//unsigned short getNumAnimals(uShort);
+//
+//void setAnimal(char*, uShort*);
+//
+//void hasAnimal(char*, uShort);
+//
+//void printAvailableAnimals(uShort);
